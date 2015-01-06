@@ -1,0 +1,105 @@
+Setting up 
+
+git config --global user.name "Ginger Allington"
+git config --global user.email "ginger.allington@gmail.com"
+git config --global color.ui "auto"
+git config --global core.editor "nano"
+
+
+
+mkdir planets
+cd planets
+nano mart.txt
+git init
+git status #to check if everything is set up correctly
+#have to tell git to track it
+#add to staging area
+git add mars.txt
+#to move to history and save the snapshot
+git commit
+#git requires a commit message. 
+#typically a one sentence explanation of how that file is different/what changed
+#fastest way is to do:
+git commit -m "Text description"
+
+#history of the repository, in reverse chronological order, 
+#with unique ID
+git log
+
+#make change to working copy
+nano file name
+git status #to see 
+
+git diff #shows how file has changed
+#will compare to most recently committed by default but can 
+#compare to other older commits
+
+#to compare to a staged copy
+git diff --staged
+
+#can use git reset HEAD <file> to remove from staging area
+
+cat mars.txt   will show you the contents
+
+Flags for the git log command for easier view
+git log --oneline #to view on one line
+git log -2  # how many commits to show
+
+#HEAD refers to most recent commit
+#to compare commits
+git diff HEAD~1    
+git diff HEAD~2  #second before most recent
+#to go way back you can use the unique IDs
+#can use a shortened # as shown in the oneline git diff
+
+#to pull a past version out git checkout
+
+git checkout HEAD <file>
+
+#can tell git to always ignore certain files, e.g. a big data file or somethign
+#first create a text file call .gitignore
+nano .gitignore
+#specify which files or folder to ignore
+
+************HISTORY AND SAVE TO FILE
+
+git add .gitignore
+
+#remote repositories for sharing between collaborators
+#to sync to the remote repository there is an additional command
+#create new repository on github
+#connect the the two
+
+git remote add origin https://github.com/gallington/planets.git
+#paste in the url from github
+
+#to view the remote
+git remote -v
+
+#to send to remote
+git push origin master #origin=the name of the remote repository 
+#master=the branch your are specifying
+
+git log --oneline #to view what is in your repository
+
+#to add another collaborator's repository
+#copy the url from github
+#change working directory to new place where you want 
+#the collabs stuff to reside
+git clone <url>
+
+#to add a new file back to the collaborator's repository: 
+cd planets
+nano pluto.txt
+git status
+git add pluto.txt
+git commit -m "NOTES"
+git push origin master
+git remote -v
+
+#if both pushing files to repository with conflicts
+#try to pull it and get the error, then open the file in nano and resolve manually
+
+#to save
+script screen.log
+
