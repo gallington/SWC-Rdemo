@@ -1,3 +1,4 @@
+
 #software carpentry intermed session on R 
 #Jan 5, 2015
 #using assignment operators
@@ -163,3 +164,5 @@ analyze.all("inflam")
 #see course notes online for info on creating conditional statements
 #could load datafile to github and have script pull the datafile from github
 #
+
+adding something on the end to change it.
